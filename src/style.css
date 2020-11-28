@@ -1,0 +1,113 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+h4,
+h3 {
+  font-size: 45px;
+  padding-left: 10px;
+  display: inline;
+}
+h1 {
+  font-size: 55px;
+  color: #3d84a8;
+  font-weight: bold;
+  padding-bottom: 20px;
+  display: inline;
+}
+h5 {
+  margin: 20px 40px;
+  font-size: 25px;
+}
+a {
+  color: #3d84a8;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+span {
+  font-size: 20px;
+  color: #3d84a8;
+  font-weight: bold;
+}
+p {
+  text-align: center;
+  color: #0881a3;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 50px 50px;
+  max-width: 700px;
+}
+.card {
+  background-color: #eaf6f6;
+}
+.date {
+  text-align: left;
+  padding-left: 40px;
+}
+.btn-search {
+  background-color: #eaf6f6;
+  border-color: #eaf6f6;
+  display: inline-block;
+  margin-top: -4px;
+}
+.fa-search {
+  font-size: 30px;
+  color: black;
+}
+.fa-search:hover {
+  color: #0881a3;
+}
+
+.nextdays {
+  margin: 20px 20px;
+  border-color: #eaf6f6;
+}
+.col-sm-3 {
+  text-align: center;
+  font-size: 16px;
+  color: #29252c;
+}
+.fa-cloud-sun,
+.fa-cloud {
+  color: #0092ca;
+}
+.fa-sun {
+  color: #ffc93c;
+}
+.fa-cloud-sun-rain,
+.fa-cloud-showers-heavy {
+  color: #455d7a;
+}
+.fa-cloud-sun,
+.fa-cloud,
+.fa-sun,
+.fa-cloud-sun-rain,
+.fa-cloud-showers-heavy {
+  font-size: 30px;
+}
+.fa-thermometer-half {
+  color: #222831;
+  font-size: 55px;
+  margin-left: 30px;
+}
+.fa-map-marker-alt:hover {
+  color: #0092ca;
+}
+.days {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .col-sm-10 {
+    width: 75%;
+  }
+  .col-sm-2 {
+    width: 25%;
+  }
+}
