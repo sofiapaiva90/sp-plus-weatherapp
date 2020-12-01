@@ -36,53 +36,54 @@ function formatDate(date) {
   minutes = `0${minutes}`;
 }
 
-  let formattedDate = `${day}, ${month} ${dateday}, ${year}, ${hour}h${minutes}`;
-  return formattedDate;
+let formattedDate = `${day}, ${month} ${dateday}, ${year}, ${hour}h${minutes}`;
+return formattedDate;
 }
 let dateTime = document.querySelector("#date-time");
 dateTime.innerHTML =(formatDate(now));
 
 // Temperature Vs City
 
-
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", cityResult);
-
 function weatherConditions(response) {
-  let citySentence = document.querySelector("h3");
-citySentence.innerHTML = response.data.name;
-let celsius = Math.round(response.data.main.temp);
-let celsiusElement = document.querySelector("#temperature");
-celsiusElement.innerHTML = `${celsius}`;
+document.querySelector("h3").innerHTML = response.data.name;
+document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+document.querySelector("#precipitation").innerHTML = response.data.main.humidity;
+document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 }
 
-function cityResult(event) {
- event.preventDefault();
+function cityResult(city) {
 let apiKey = "470498c2d4e432b94c48ce9eb7ed132a";
-let unit = "metric";
-let city = document.querySelector("#city-search").value;
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`; 
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`; 
 axios.get(apiUrl).then(weatherConditions);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-search").value;
+  cityResult(city);
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
 
 // GetPosition
 
 function getPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let unit = "metric";
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(weatherConditions);
   
 }
 
-function startGeolocation(event) {
+function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 
 let position = document.querySelector("#current-position");
-position.addEventListener("click", startGeolocation);
+position.addEventListener("click", getCurrentLocation);
+
+
+cityResult("Odivelas");

@@ -9,7 +9,6 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap"
@@ -30,15 +29,15 @@
           <h3 id="city">Odivelas</h3>
           <p class="date" id="date-time">Friday, September 30th 2020, 22h08</p>
           <div class="float-right">
-            Precipitation: 0%<br />
-            Wind: 2Km/h
+            Precipitation: <span id="precipitation">0</span>%<br />
+            Wind: <span id="wind">2</span>Km/h
           </div>
           <i class="fas fa-thermometer-half"></i>
           <h1 id="temperature">24</h1>
-          <span>
+          <span class="degrees">
             <a href="#" id="celsius">°C </a>
-            <!--|
-            <a href="#" id="fahrenheit">°F</a>-->
+            |
+            <a href="#" id="fahrenheit">°F</a>
           </span>
           <form id="search-form">
             <div class="form-row">
@@ -128,7 +127,14 @@
               </div>
             </div>
           </div>
-          <p>Coded by Sofia Paiva</p>
+          <p class="footer-line">
+            <a
+              class="github-link"
+              href="https://github.com/sofiapaiva90/sp-plus-weatherapp"
+              target="_blank"
+              >Open-source code </a
+            >by Sofia Paiva
+          </p>
         </div>
       </div>
     </div>
