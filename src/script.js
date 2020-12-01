@@ -46,9 +46,10 @@ dateTime.innerHTML =(formatDate(now));
 
 function weatherConditions(response) {
 document.querySelector("h3").innerHTML = response.data.name;
-document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
 document.querySelector("#precipitation").innerHTML = response.data.main.humidity;
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+celsiusTemperature = response.data.main.temp;
+document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
 }
 
 function cityResult(city) {
@@ -63,9 +64,6 @@ function handleSubmit(event) {
   cityResult(city);
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
-
 // GetPosition
 
 function getPosition(position) {
@@ -76,14 +74,36 @@ function getPosition(position) {
   axios.get(apiUrl).then(weatherConditions);
   
 }
-
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 
+// Celsius Vs Fahrenheit
+
+function convertToFahrenheit(event) {
+event.preventDefault();
+let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+document.querySelector("#temperature").innerHTML = Math.round(fahrenheiTemperature);
+}
+
+function convertToCelsius(event) {
+event.preventDefault();
+document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
 let position = document.querySelector("#current-position");
 position.addEventListener("click", getCurrentLocation);
 
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", convertToCelsius);
 
 cityResult("Odivelas");
