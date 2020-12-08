@@ -19,25 +19,12 @@ h5 {
   font-size: 25px;
 }
 a {
-  color: #3d84a8;
+  color: black;
 }
 a:hover {
   text-decoration: none;
-  color: black;
-}
-
-.degrees {
-  font-size: 20px;
   color: #3d84a8;
-  font-weight: bold;
 }
-.footer-line {
-  text-align: center;
-  color: #0881a3;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-}
-
 .container {
   margin: 0 auto;
   padding: 50px 50px;
@@ -46,9 +33,27 @@ a:hover {
 .card {
   background-color: #eaf6f6;
 }
+.temperature-data {
+  padding: 20px 30px 20px 0;
+}
 .date {
   text-align: left;
   padding-left: 40px;
+}
+.degrees {
+  position: relative;
+  font-size: 20px;
+  top: -20px;
+  color: #3d84a8;
+  font-weight: bold;
+}
+.active {
+  color: #3d84a8;
+}
+.form-control:focus {
+  border-color: #3d84a8;
+  box-shadow: none;
+  background-color: #f5fffa;
 }
 .btn-search {
   background-color: #eaf6f6;
@@ -96,11 +101,20 @@ a:hover {
   font-size: 55px;
   margin-left: 30px;
 }
+.fa-map-marker-alt {
+  color: #0881a3;
+}
 .fa-map-marker-alt:hover {
-  color: #0092ca;
+  color: #455d7a;
 }
 .days {
   font-weight: bold;
+}
+.footer-line {
+  text-align: center;
+  color: #0881a3;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
 }
 .github-link {
   color: black;

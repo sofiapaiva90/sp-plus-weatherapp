@@ -1,8 +1,6 @@
 // Date and Hours
-
-let now = new Date();
-function formatDate(date) {
-  let days = [
+function formatDate(timestamp) {
+let days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -26,27 +24,29 @@ function formatDate(date) {
     "November",
     "December"
   ];
+  let date = new Date(timestamp);
   let day = days[date.getDay()];
   let month = months[date.getMonth()];
   let dateday = date.getDate();
   let year = date.getFullYear();
   let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
   let minutes = date.getMinutes();
   if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-let formattedDate = `${day}, ${month} ${dateday}, ${year}, ${hour}h${minutes}`;
-return formattedDate;
+return`${day}, ${month} ${dateday}, ${year}, ${hour}h${minutes}`;
 }
-let dateTime = document.querySelector("#date-time");
-dateTime.innerHTML =(formatDate(now));
 
-// Temperature Vs City
+// Search City
 
 function weatherConditions(response) {
 document.querySelector("h3").innerHTML = response.data.name;
-document.querySelector("#precipitation").innerHTML = response.data.main.humidity;
+document.querySelector("#date-time").innerHTML = formatDate(response.data.dt*1000);
+document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 celsiusTemperature = response.data.main.temp;
 document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
@@ -83,12 +83,16 @@ function getCurrentLocation(event) {
 
 function convertToFahrenheit(event) {
 event.preventDefault();
+celsiusLink.classList.remove("active");
+fahrenheitLink.classList.add("active");
 let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
 document.querySelector("#temperature").innerHTML = Math.round(fahrenheiTemperature);
 }
 
 function convertToCelsius(event) {
 event.preventDefault();
+celsiusLink.classList.add("active");
+fahrenheitLink.classList.remove("active");
 document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
 }
 
