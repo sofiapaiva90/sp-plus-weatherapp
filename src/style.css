@@ -12,6 +12,7 @@ h1 {
   color: #3d84a8;
   font-weight: bold;
   padding-bottom: 20px;
+  padding-left: 15px;
   display: inline;
 }
 h5 {
@@ -32,6 +33,12 @@ a:hover {
 }
 .card {
   background-color: #eaf6f6;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
 }
 .temperature-data {
   padding: 20px 30px 20px 0;
@@ -99,7 +106,7 @@ a:hover {
 .fa-thermometer-half {
   color: #222831;
   font-size: 55px;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 .fa-map-marker-alt {
   color: #0881a3;
