@@ -113,14 +113,13 @@ for (let index = 1; index < 8; index++) {
                    <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
                 </div>
                 <div class="col-sm-3 days">${formatDay(forecast.dt * 1000)}</div>
-                <div class="col-sm-3">${Math.round(forecast.temp.min)} °C</div>
-                <div class="col-sm-3">${Math.round(forecast.temp.max)} °C</div>
+                <div class="col-sm-3 min">${Math.round(forecast.temp.min)} °C</div>
+                <div class="col-sm-3 max">${Math.round(forecast.temp.max)} °C</div>
               </div>
               <hr />
               `;
 }
 }
-
 // Celsius Vs Fahrenheit
 
 function convertToFahrenheit(event) {
@@ -152,5 +151,5 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
 
-cityResult("Odivelas");
+cityResult("Lisbon");
 

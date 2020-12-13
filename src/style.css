@@ -8,7 +8,7 @@ h3 {
   display: inline;
 }
 h1 {
-  font-size: 55px;
+  font-size: 60px;
   color: #3d84a8;
   font-weight: bold;
   padding-bottom: 20px;
@@ -26,20 +26,22 @@ a:hover {
   text-decoration: none;
   color: #3d84a8;
 }
-.container {
-  margin: 0 auto;
-  padding: 50px 50px;
-  max-width: 700px;
-}
-.card {
-  background-color: #eaf6f6;
-}
 img {
   display: block;
   margin: 0 auto;
   height: 48px;
   width: 48px;
 }
+.container {
+  margin: 0 auto;
+  padding: 50px 50px;
+  max-width: 700px;
+}
+.principal {
+  background-image: url("https://get.wallhere.com/photo/mountains-distance-sky-black-and-white-1013343.jpg");
+  background-size: cover;
+}
+
 .temperature-data {
   padding: 20px 30px 20px 0;
 }
@@ -50,7 +52,7 @@ img {
 .degrees {
   position: relative;
   font-size: 20px;
-  top: -20px;
+  top: -30px;
   color: #3d84a8;
   font-weight: bold;
 }
@@ -66,7 +68,7 @@ img {
   background-color: #eaf6f6;
   border-color: #eaf6f6;
   display: inline-block;
-  margin-top: -4px;
+  margin-top: -5px;
 }
 .fa-search {
   font-size: 30px;
@@ -77,36 +79,22 @@ img {
 }
 
 .nextdays {
+  background-color: rgb(189, 189, 189, 0.8);
   margin: 20px 20px;
-  border-color: #eaf6f6;
+  border-color: #607d8b;
 }
 .col-sm-3 {
   text-align: center;
   font-size: 16px;
   color: #29252c;
+  padding: 0px;
+  margin: auto;
 }
-.fa-cloud-sun,
-.fa-cloud {
-  color: #0092ca;
-}
-.fa-sun {
-  color: #ffc93c;
-}
-.fa-cloud-sun-rain,
-.fa-cloud-showers-heavy {
-  color: #455d7a;
-}
-.fa-cloud-sun,
-.fa-cloud,
-.fa-sun,
-.fa-cloud-sun-rain,
-.fa-cloud-showers-heavy {
-  font-size: 30px;
-}
+
 .fa-thermometer-half {
   color: #222831;
   font-size: 55px;
-  margin-left: 40px;
+  margin-left: 30px;
 }
 .fa-map-marker-alt {
   color: #0881a3;
@@ -116,6 +104,8 @@ img {
 }
 .days {
   font-weight: bold;
+  color: #607d8b;
+  font-size: 17px;
 }
 .footer-line {
   text-align: center;
@@ -124,7 +114,7 @@ img {
   font-size: 15px;
 }
 .github-link {
-  color: black;
+  color: white;
 }
 .github-link:hover {
   font-weight: bolder;
