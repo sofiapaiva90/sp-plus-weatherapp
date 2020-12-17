@@ -120,11 +120,86 @@ img {
   font-weight: bolder;
 }
 
+.nextdays .card-body {
+  padding: 10px 15px;
+}
+
+.nextdays .card-body .row {
+  padding: 15px 5px;
+  margin: 0;
+  border-top: 1px solid #c5c5c5;
+}
+
+.nextdays .card-body .row:first-child {
+  border-top: none;
+}
+
 @media screen and (max-width: 600px) {
   .col-sm-10 {
-    width: 75%;
+    width: 85%;
   }
   .col-sm-2 {
+    width: 15%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .container {
+    padding: 15px;
+  }
+
+  h4 {
+    padding: 0;
+  }
+
+  h4 i,
+  h3 {
+    font-size: 35px;
+  }
+
+  .temperature-data .fa-thermometer-half {
+    font-size: 45px;
+  }
+
+  .temperature-data h1 {
+    font-size: 60px;
+  }
+
+  .degrees {
+    top: -20px;
+  }
+
+  #search-form button {
+    margin: 0;
+  }
+
+  #search-form button .fa-search {
+    font-size: 16px;
+  }
+
+  #search-form .col-sm-2 {
+    text-align: right;
+  }
+
+  .card-body h5 {
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  .nextdays {
+    margin: 0 0 15px;
+  }
+
+  .icon {
     width: 25%;
+  }
+
+  .min,
+  .max {
+    width: 20%;
+  }
+
+  .days {
+    width: 35%;
   }
 }
